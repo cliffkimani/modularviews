@@ -1,0 +1,19 @@
+<div class="company" id="company-{{ instance.pk }}">
+	{% if instance.logo %}
+	{% load thumbnail %}
+	{% thumbnail instance.logo 300x225 as logo %}
+	<img src="{{ logo }}" width="{{ logo.width }}" height="{{ logo.height }}" />
+	{% endif %}
+	<div class="company-name">
+		{% if instance.url %}
+		<a href="{{ instance.url }}">{{ instance.name }}</a>
+		{% else %}
+		{{ instance.name }}
+		{% endif %}
+	</div>
+	{% if instance.description %}
+	<div class="company-description">
+		<pre>{{ instance.description }}</pre>
+	</div>
+	{% endif %}
+</div>
