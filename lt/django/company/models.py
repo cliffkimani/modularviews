@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 
+#new
+
 from cms.models import CMSPlugin
 
 logo_upload = getattr(settings,'COMPANY_LOGO_UPLOAD_TO','companies/')
